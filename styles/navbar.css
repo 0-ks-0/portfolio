@@ -1,0 +1,185 @@
+#navbar
+{
+	width: 100vw;
+	min-height: 6vh;
+
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+
+	background-color: var(--color-nav);
+
+	padding: 1rem 4rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#navbar .logo h3
+{
+	color: var(--color-text);
+
+	letter-spacing: 2px;
+
+	font-size: 1.6rem;
+}
+
+#navbar .links {
+	list-style: none;
+
+	display: flex;
+	justify-content: space-around;
+
+	width: 50rem;
+	max-width: 50%;
+	min-width: 30%;
+}
+
+#navbar .links li
+{
+	position: relative; /* Positioning it for the ::after pseudo-element */
+}
+
+#navbar .links a
+{
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: var(--color-text);
+
+	display: inline-block;
+
+	padding-bottom: 5px; /* Adds space below the text for the line */
+
+	transition: color 0.3s ease;
+}
+
+#navbar .links a:hover
+{
+	color: var(--color-green);
+}
+
+#navbar .links li::after
+{
+	content: "";
+
+	position: absolute;
+	bottom: 0; /* Position it at the bottom of the link */
+	left: 0;
+
+	width: 0;
+	height: 3px;
+
+	background-color: var(--color-green);
+
+	transition: width 0.3s ease;
+}
+
+#navbar .links li:hover::after
+{
+	width: 100%; /* Expands to full length of the link */
+}
+
+/*
+* Hamburger icon (hidden by default)
+*/
+.hamburger
+{
+	display: none;
+
+	cursor: pointer;
+
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 30px;
+	height: 21px;
+}
+
+.hamburger .bar
+{
+	width: 100%;
+	height: 4px;
+
+	background-color: white;
+
+	border-radius: 5px;
+}
+
+/*
+ *  Tablet and smaller
+ */
+@media (max-width: 768px)
+{
+	/* Hide the links on default */
+	#navbar .links
+	{
+		width: 100%;
+		height: 100vh;
+
+		position: absolute;
+		top: 6vh;
+		right: -100%;
+
+		visibility: hidden;
+		opacity: 0;
+
+		transition: right 0.4s ease, visibility 0s 0.4s, opacity 0.4s ease; /* Hiding away transition */
+
+		background-color: var(--color-nav);;
+
+		flex-direction: column;
+		align-items: center;
+
+		padding: 10px 0;
+	}
+
+	#navbar .links li
+	{
+		opacity: 0; /* Initially hide each link */
+
+		transform: translateX(30px); /* Start each link slightly to the right */
+	}
+
+	@keyframes animateLink
+	{
+		0%
+		{
+			opacity: 0;
+
+			transform: translateX(30px);
+		}
+
+		100%
+		{
+			opacity: 1;
+
+			transform: translateX(0); /* Ends at the normal position */
+		}
+	}
+
+	#navbar .links li a
+	{
+		font-size: 1.2rem;
+	}
+
+	/* Show hamburger menu */
+	.hamburger
+	{
+		display: flex;
+	}
+
+	/* Show links when hamburger is clicked */
+	#navbar .links.active
+	{
+		display: flex;
+
+		right: 0;
+
+		visibility: visible;
+		opacity: 1;
+
+		transition: right 0.4s ease, visibility 0s, opacity 0.4s ease; /* Transition to display */
+	}
+}

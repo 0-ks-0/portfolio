@@ -1,0 +1,32 @@
+:root
+{
+	--color-green: rgb(60, 178, 92);
+	--color-text: rgb(255, 255, 255);
+	--color-nav: rgb(0, 0, 0);
+	--color-gray-1: rgb(20, 20, 20);
+}
+
+*
+{
+	margin: 0;
+
+	padding: 0;
+
+	box-sizing: border-box;
+
+	font-family: sans-serif;
+}
+
+html
+{
+	scroll-behavior: smooth;
+}
+
+body
+{
+    transition: background-color 0.5s;
+
+	overflow-x: hideen;
+
+	background-color: var(--color-gray-1);
+}
