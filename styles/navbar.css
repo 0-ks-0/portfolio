@@ -25,7 +25,8 @@
 	font-size: 1.6rem;
 }
 
-#navbar .links {
+#navbar .links
+{
 	list-style: none;
 
 	display: flex;
