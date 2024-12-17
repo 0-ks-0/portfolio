@@ -4,6 +4,14 @@
 	--color-text: #f4f4f9;
 	--color-nav: rgb(0, 0, 0);
 	--color-gray-1: rgb(20, 20, 20);
+
+	--color-section-background: #1a1a1a;
+
+	--color-link: rgb(60, 178, 92);;
+	--color-link-hover: #fff79d;
+
+	--color-button: #28a745;
+	--color-button-hover: #007bff;
 }
 
 *
@@ -29,4 +37,18 @@ body
 	overflow-x: hidden;
 
 	background-color: var(--color-gray-1);
+
+	color: var(--color-text);
+
+	letter-spacing: 2px;
+}
+
+header
+{
+	background-color: var(--color-section-background);
+}
+
+a
+{
+	color: var(--color-text);
 }

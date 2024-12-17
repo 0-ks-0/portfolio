@@ -1,0 +1,172 @@
+#home
+{
+	min-height: calc(100vh - 6vh);
+
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+	text-align: center;
+}
+
+.home-container
+{
+    margin: 0 auto;
+
+    max-width: 40rem;
+
+	display: grid;
+	gap: 2rem;
+}
+
+/*
+ * Title
+ */
+.home-container h1
+{
+    font-size: 4rem;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+/*
+ * Paragraph
+ */
+.home-container p
+{
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+/*
+ * Link
+ */
+.home-container p a
+{
+    color: var(--color-link);
+    font-weight: bold;
+
+	text-decoration: none;
+}
+
+.home-container p a:hover
+{
+    text-decoration: underline;
+}
+
+/*
+ * CTAs
+ */
+.home-container .link-btn
+{
+    background-color: var(--color-button);
+
+	font-weight: 600;
+
+	text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    margin: 10px;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-first:hover
+{
+    background-color: var(--color-button-hover);
+}
+
+.btn-second:hover
+{
+	background-color: #dc3545;
+}
+
+/*
+ * Social Media
+ */
+.home-container .socials ul
+{
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+
+	margin-top: 20px;
+}
+
+.home-container .socials ul li
+{
+    margin: 0 10px;
+}
+
+.home-container .socials ul li a
+{
+    color: var(--color-link);
+    font-size: 1.2rem;
+
+    text-decoration: none;
+
+    transition: transform 0.4s ease;
+}
+
+.home-container .socials ul li a:hover
+{
+	color: var(--color-link-hover);
+
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px)
+{
+	.home-container
+	{
+		padding: 0.5rem;
+	}
+
+    .home-container h1
+	{
+        font-size: 2rem;
+    }
+
+    .home-container p
+	{
+        font-size: 1.1rem;
+    }
+
+    .home-container .link-btn
+	{
+        padding: 10px 20px;
+
+        font-size: 1rem;
+    }
+
+    .home-container .socials ul
+	{
+        flex-direction: column;
+
+        margin-top: 30px;
+    }
+
+    .home-container .socials ul li
+	{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 550px)
+{
+	.home-container .link-btn
+	{
+		display: block;
+
+		margin: 1rem auto;
+
+		max-width: 50%;
+	}
+}
