@@ -19,6 +19,11 @@
 
 	--color-pill-btn-bg-hover: rgb(76, 175, 80);
 	--color-pill-btn-bg-hover-text: #f4f4f9;
+
+	--color-glassmorphism-border: rgba(106, 255, 153, 0.3);
+	--color-glassmorphism-border-hover: rgba(106, 255, 153, 0.5); /* Slightly brighter */
+
+	--color-glassmorphism-bg: rgba(255, 255, 255, 0.1);
 }
 
 *
@@ -88,6 +93,33 @@ section
 .link-btn
 {
 	text-decoration: none; /* Remove all the underlines for the anchor tags */
+}
+
+.glassmorphism
+{
+	background: var(--color-glassmorphism-bg);
+
+	backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+
+	box-shadow:
+		0 4px 6px rgba(255, 255, 255, 0.2), /* closer to border */
+		0 8px 15px rgba(255, 255, 255, 0.1); /* further from border */
+
+	border: 3px solid var(--color-glassmorphism-border);
+
+	transition: all 0.4s ease-in-out;
+}
+
+.glassmorphism:hover
+{
+	box-shadow:
+		0 8px 15px rgba(255, 255, 255, 0.3),  /* Light outer shadow (brighter) */
+		0 16px 25px rgba(255, 255, 255, 0.15); /* Deeper (more spread-out) shadow with soft white glow */
+
+	border: 3px solid var(--color-glassmorphism-border-hover);
+
+	transform: translateY(-5px);
 }
 
 @media only screen and (max-width: 768px)
