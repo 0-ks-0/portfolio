@@ -3,6 +3,8 @@
 	--color-green: rgb(60, 178, 92);
 
 	--color-text: #f4f4f9;
+	--color-text-secondary: #ccc; /* Text that is of less focus */
+
 	--color-nav: rgb(20, 20, 20);
 	--color-gray-1: rgb(20, 20, 20);
 
