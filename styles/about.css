@@ -1,0 +1,41 @@
+#about p
+{
+	font-size: 16px;
+	color: var(--color-text);
+
+	line-height: 1.7;
+
+	margin-bottom: 1.8rem; /* Increase spacing so the pararaphs don't look squished */
+}
+
+#about .link-btn
+{
+	display: inline-block;
+
+	color: var(--color-pill-btn-text);
+	font-size: 1rem;
+
+	margin-top: 1rem;
+
+	padding: 0.5rem 1rem;
+
+	border: 2px solid var(--color-pill-btn-border);
+	border-radius: 50px;
+
+	transition: background-color 0.4s, color 0.4s; /* Add nice hover effects to the button*/
+}
+
+#about .link-btn:hover
+{
+	background-color: var(--color-pill-btn-bg-hover);
+
+	color: var(--color-pill-btn-bg-hover-text);
+}
+
+@media only screen and (max-width: 768px)
+{
+	#about p
+	{
+	  font-size: 14px;
+	}
+}
