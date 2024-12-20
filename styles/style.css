@@ -127,6 +127,53 @@ section
 	transform: translateY(-5px);
 }
 
+.grid
+{
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+}
+
+.pill-btn
+{
+	color: var(--color-pill-btn-text);
+    font-size: 0.7rem;
+	font-weight: bold;
+
+    padding: 0.5rem 1rem;
+
+	border: 2px solid var(--color-pill-btn-border);
+    border-radius: 50px;
+
+    text-align: center;
+
+	transition: background-color 0.4s, color 0.4s; /* Add nice hover effects to the button*/
+}
+
+.pill-btn:hover
+{
+	background-color: var(--color-pill-btn-bg-hover);
+
+	color: var(--color-pill-btn-bg-hover-text);
+}
+
+
+.pill-btn--filled
+{
+	background-color: var(--color-pill-btn-bg-hover);
+
+	color: var(--color-pill-btn-bg-hover-text);
+
+	transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.pill-btn--filled:hover
+{
+	background-color: transparent;
+
+	color: var(--color-pill-btn-text);
+}
+
 @media only screen and (max-width: 768px)
 {
 	.container
