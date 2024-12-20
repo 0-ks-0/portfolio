@@ -94,15 +94,6 @@
 }
 
 /*
- * Description
- */
-.project-description
-{
-    font-size: 0.7rem;
-    color: var(--color-text-secondary);
-}
-
-/*
  * CTAs
  */
 .project-cta-container
