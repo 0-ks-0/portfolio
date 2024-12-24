@@ -95,12 +95,14 @@
 
 .project-tech-item
 {
-    font-size: 0.75rem;
+	font-size: 0.75rem;
 	font-weight: 800;
-    color: #28a745; /* Green text color */
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #28a745; /* Green border */
+	color: var(--color-project-tech-text);
+
+	padding: 5px 10px;
+
+	border-radius: 5px;
+	border: 1px solid var(--color-project-tech-border);
 }
 
 /*

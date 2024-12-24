@@ -25,8 +25,10 @@
 
 	--color-glassmorphism-border: rgba(106, 255, 153, 0.3);
 	--color-glassmorphism-border-hover: rgba(106, 255, 153, 0.5); /* Slightly brighter */
-
 	--color-glassmorphism-bg: rgba(211, 198, 198, 0.1);
+
+	--color-project-tech-border: #28a745;
+	--color-project-tech-text: #28a745;
 }
 
 *
