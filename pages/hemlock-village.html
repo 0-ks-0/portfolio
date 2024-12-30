@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>HemlockVillage</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+
+	<body>
+		<!-- Overview -->
+		<h3 class="project-title">Residential Care Facility Management System - HemlockVillage</h3>
+		<p class="project-tagline">Optimizing Operations and Care with a Comprehensive Residential Facility Management System</p>
+		<p class="project-date">Nov - Dec 2024</p>
+
+		<!-- Technologies -->
+		<div class="project-tech">
+			<span class="project-tech-item">Laravel (PHP)</span>
+			<span class="project-tech-item">HTML</span>
+			<span class="project-tech-item">CSS</span>
+			<span class="project-tech-item">JavaScript</span>
+		</div>
+
+		<!-- Project Description -->
+		<p class="project-description">
+			Developed at Thaddeus Stevens College of Technology as a group final project for CSET220 - Software Project III.<br>
+			A role-based web application designed to enhance operational efficiency in residential care facilities. The system aims to streamline key administrative tasks, improving both staff coordination and patient care.
+		</p>
+
+		<!-- Video Embed -->
+		<div class="project-videos">
+			<h4>Project Demo Videos</h4>
+
+			<div class="video-wrapper">
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/vwUMCMpMIp0?si=85T7eIEH_MaL9PkF"
+					title="YouTube video player - CSET220 Final - Hemlock Village Part 1"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				>
+				</iframe>
+			</div>
+
+			<div class="video-wrapper">
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/sPPefAoQcSA?si=vsY_StsdOftKwOch"
+					title="YouTube video player - CSET220 Final - Hemlock Village Part 2"
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+				>
+				</iframe>
+			</div>
+		</div>
+
+		<!-- Things I Learned -->
+		<div class="project-learnings">
+			<h4>Things I Learned</h4>
+
+			<ul>
+				<li>How to create my own PHP Artisan command.</li>
+				<li>How to create custom middleware for route authorization.</li>
+				<li>Defining relationships in models and using eager loading to improve query efficiency.</li>
+				<li>Understanding and implementing Laravel pagination.</li>
+				<li>First-time exposure to namespaces.</li>
+			</ul>
+		</div>
+
+		<!-- Challenges and Solutions -->
+		<div class="project-challenges">
+			<h4>Challenges and Solutions</h4>
+
+			<ul>
+				<li><strong>Running Migrations in the Correct Order:</strong> Laravel runs migrations in alphabetical order, which led to errors with foreign key constraints as tables may not exist at the time of running a migration. Solution: Created a custom PHP Artisan command to run migrations in a specific order.</li>
+				<li><strong>Resetting Database:</strong> I needed a way to drop all the tables in the database to reset the database for reasons including testing purposes due to there being very minimal data at the time, and making it easy to reset if the tables or their structure changed. Because I created a custom php artisan command to run migrations in a custom order instead of renaming the files to force them to be in the correct order, I could not run `php artisan migrate:fresh` to easily do that. Solution: Created another custom Artisan command to delete all tables in the database.</li>
+				<li><strong>Ensuring Consistent Data Across Group Members:</strong> To ensure everyone had the same data for testing, I used seeders to populate the database with predefined data, which can be done with a PHP Artisan command.</li>
+				<li><strong>Avoiding Clutter with Imports:</strong> To reduce clutter in files, I restructured namespaces to minimize the number of imports of controllers and models needed.</li>
+				<li><strong>Unauthorized Access:</strong> I created a middleware to handle both authentication and authorization for routes because I can easily group routes under this middleware.</li>
+				<li><strong>Missing `kernel.php`</strong> Based on what I obtained from my research, Laravel 11 relocated the kernal.php file. However, the project did not have that file, so I could not register my created middleware. Solution: Made the middleware function static and manually call it in the route file.</li>
+				<li><strong>Handling Large Datasets:</strong> To prevent performance issues with large datasets (e.g., the Users page), I implemented pagination to split records across multiple pages and improve load time. This allows users to navigate by the page rather than the position of it.
+					<br>I was not able to figure out how to map when using a LengthAwarePaginator--Laravel's object for pagination.</li>
+			</ul>
+		</div>
+
+		<!-- Things I Would Do Differently -->
+		<div class="project-improvements">
+			<h4>Things I Would Do Differently</h4>
+
+			<ul>
+				<li>Implement more pagination to enhance the user experience with large datasets.</li>
+				<li>Add date selection for pages to allow users to view historical data.</li>
+				<li>Enhance the functionality to allow more than four patient groups, allow more employees per roster, and allow patients to have multiple appointments per day, including keeping track of appointment times.</li>
+			</ul>
+		</div>
+
+		<!-- Floating Action Button -->
+		<div class="floating-btn-container">
+			<div class="extra-btns">
+				<a
+					href="https://github.com/0-ks-0/cset220-fp-HemlockVillage"
+					class="btn github-btn"
+					target="_blank"
+					rel="noopener"
+				>
+					GitHub
+				</a>
+
+				<button class="btn back-btn" onclick="window.history.back()">Back</button>
+			</div>
+
+			<button class="floating-btn" onclick="toggleButtons()">
+				<i class="fa-solid fa-plus"></i>
+			</button>
+		</div>
+	</body>
+</html>
